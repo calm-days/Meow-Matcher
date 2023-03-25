@@ -1,16 +1,18 @@
 //
-//  ContentView.swift
-//  Meow Matcher
-//
-//  Created by Roman Liukevich on 3/12/23.
-//
 
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+    @StateObject var breedFetcher = BreedFetcher()
+    
+    var body: some View {  
+        if breedFetcher.isLoading {
+            LoadingView()
+        } else if breedFetcher.errorMessage != nil {
+            ErrorView(breedFetcher: breedFetcher)
+        } else {
+            BreedListView(breeds: breedFetcher.breeds)
+        }
     }
 }
 
