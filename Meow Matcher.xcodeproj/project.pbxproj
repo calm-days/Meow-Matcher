@@ -139,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8E2DFC5B29BE23B90034B834 /* Meow Matcher */,
+				8EBF9FE229BFE92900757A0B /* View */,
 				8E95F97B29C1FBF700C4E23B /* Resources */,
 				8E95F95629C1E68500C4E23B /* Components */,
 				8E95F94F29C1E68500C4E23B /* Utils */,
@@ -167,8 +168,6 @@
 			children = (
 				8E2DFC5C29BE23B90034B834 /* Meow_MatcherApp.swift */,
 				8E2DFC5E29BE23B90034B834 /* ContentView.swift */,
-				8EBF9FE229BFE92900757A0B /* View */,
-				8E2DFC8829BFDCBD0034B834 /* Networking */,
 				8E2DFC6029BE23BF0034B834 /* Assets.xcassets */,
 				8E2DFC6229BE23BF0034B834 /* Preview Content */,
 			);
@@ -215,8 +214,6 @@
 		8E95F94929C1E68400C4E23B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8E95F94A29C1E68400C4E23B /* PackagesView.swift */,
-				8E95F94B29C1E68400C4E23B /* FAQView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +229,7 @@
 		8E95F94F29C1E68500C4E23B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E2DFC8829BFDCBD0034B834 /* Networking */,
 				8E95F95029C1E68500C4E23B /* TrackableScrollView.swift */,
 				8E95F95129C1E68500C4E23B /* ModeData.swift */,
 				8E95F95229C1E68500C4E23B /* Extensions.swift */,
@@ -322,6 +320,8 @@
 				8EBF9FED29BFE9BF00757A0B /* BreedListView.swift */,
 				8E95F97929C1EC3E00C4E23B /* InfoSideView.swift */,
 				8EBF9FF329C088D300757A0B /* BreedRow.swift */,
+				8E95F94A29C1E68400C4E23B /* PackagesView.swift */,
+				8E95F94B29C1E68400C4E23B /* FAQView.swift */,
 				8EBF9FF529C0890900757A0B /* BreedDetailView.swift */,
 			);
 			path = View;

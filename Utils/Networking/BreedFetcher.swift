@@ -29,7 +29,7 @@ class BreedFetcher: ObservableObject {
                 
                 switch result {
                 case .failure(let error):
-                    self .errorMessage = error.localizedDescription
+                    self.errorMessage = error.localizedDescription
                     print(error)
                 case .success(let breeds):
                     self.breeds = breeds
@@ -39,7 +39,7 @@ class BreedFetcher: ObservableObject {
         }
     }
     
-    // MARK: preview heplers
+    // MARK: preview helpers
     
     static func errorState() -> BreedFetcher {
         let fetcher = BreedFetcher()
