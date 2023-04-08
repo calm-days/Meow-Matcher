@@ -1,7 +1,6 @@
-
-
 import SwiftUI
 
+/// A view that displays a row with breed information.
 struct BreedRow: View {
     let breed: Breed
     let imageSize: CGFloat = 120
@@ -9,34 +8,7 @@ struct BreedRow: View {
     var body: some View {
         HStack (spacing: 20){
             
-            
-            if breed.image?.url != nil {
-                AsyncImage (url: URL(string: breed.image!.url!)) { phase in
-                    if let image = phase.image {
-                        image.resizable()
-                            .scaledToFill ()
-                            .frame (width: imageSize, height: imageSize)
-                            .clipped()
-                            .clipShape(RoundedRectangle(cornerRadius: 40))
-                        
-                    } else if phase.error != nil {
-                        Text(phase.error?.localizedDescription ?? "error")
-                            .foregroundColor(Color.pink)
-                            .frame (width: imageSize, height: imageSize)
-                            .clipShape(RoundedRectangle(cornerRadius: 40))
-                        
-                    } else {
-                        ProgressView()
-                            .frame (width: imageSize, height: imageSize)
-                            .clipShape(RoundedRectangle(cornerRadius: 40))
-                    }
-                }
-            } else {
-                Color.gray.frame(width: imageSize, height: imageSize)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-            }
-            
-            
+            breedImageView
             
             VStack(alignment: .leading, spacing: 5) {
                 Text(breed.name)
@@ -44,6 +16,35 @@ struct BreedRow: View {
                     .foregroundColor(.green)
                     .fontWeight(.bold)
                 Text(breed.temperament)
+            }
+        }
+    }
+    
+    private var breedImageView: some View {
+        Group {
+            if let urlString = breed.image?.url, let url = URL(string: urlString) {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image.resizable()
+                            .scaledToFill()
+                            .frame(width: imageSize, height: imageSize)
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                    case .failure(let error):
+                        Text(error.localizedDescription)
+                            .foregroundColor(Color.pink)
+                            .frame(width: imageSize, height: imageSize)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                    default:
+                        ProgressView()
+                            .frame(width: imageSize, height: imageSize)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                    }
+                }
+            } else {
+                Color.gray.frame(width: imageSize, height: imageSize)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
             }
         }
     }
