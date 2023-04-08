@@ -1,16 +1,14 @@
-
-
 import SwiftUI
 
+/// A view that displays a list of cat breeds with search functionality.
 struct BreedListView: View {
     let breeds: [Breed]
-    @State private var searchText = ""
-    let gradient = LinearGradient(gradient: Gradient(colors: [.green, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
     
     @State private var showingSheet = false
+    @State private var searchText = ""
+    private let gradient = LinearGradient(gradient: Gradient(colors: [.green, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
     
-    
-    var filteredBreeds: [Breed] {
+    private var filteredBreeds: [Breed] {
         if searchText.count == 0 {
             return breeds
         } else {
@@ -33,43 +31,32 @@ struct BreedListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            
-            //.navigationTitle("Meow Matcher")
             .searchable(text: $searchText)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Meow Matcher")
-                            .font(.title)
-                            .fontWeight(.black)
-                            .foregroundStyle(gradient)
-                        //.padding(30)
-                        
-                    }
-                    
+                    Text("Meow Matcher")
+                        .font(.title)
+                        .fontWeight(.black)
+                        .foregroundStyle(gradient)
                 }
                 
-            }
-            
-            
-            .preferredColorScheme(.dark)
-            .accentColor(.purple)
-            .toolbar {
-                Button {
-                    showingSheet.toggle()
-                } label: {
-                    Image(systemName: "info.circle")
-                        .foregroundColor(.purple)
+                ToolbarItem {
+                    Button {
+                        showingSheet.toggle()
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.purple)
+                    }
                 }
             }
+            .preferredColorScheme(.dark)
+            .accentColor(.purple)
             .sheet(isPresented: $showingSheet) {
                 VStack {
                     InfoSideView()
                 }
-               
             }
-            
         }
     }
 }
