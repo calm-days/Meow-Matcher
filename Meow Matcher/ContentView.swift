@@ -1,11 +1,14 @@
-//
-
 import SwiftUI
 
+/// A view that displays a list of cat breeds, showing a loading or error view when necessary.
 struct ContentView: View {
     @StateObject var breedFetcher = BreedFetcher()
     
-    var body: some View {  
+    var body: some View {
+        mainContent
+    }
+    
+    @ViewBuilder private var mainContent: some View {
         if breedFetcher.isLoading {
             LoadingView()
         } else if breedFetcher.errorMessage != nil {
