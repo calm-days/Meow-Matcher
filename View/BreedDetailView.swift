@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 struct BreedDetailView: View {
@@ -16,9 +14,7 @@ struct BreedDetailView: View {
                                 .scaledToFit()
                                 .frame( height: imageSize)
                                 .clipped()
-                            
                         } else if phase.error != nil {
-                            
                             Text(phase.error?.localizedDescription ?? "error")
                                 .foregroundColor(Color.pink)
                                 .frame(width: imageSize, height: imageSize)
@@ -26,23 +22,18 @@ struct BreedDetailView: View {
                             ProgressView()
                                 .frame(width: imageSize, height: imageSize)
                         }
-                        
                     }
-                }else {
-                    Color.gray.frame(height: imageSize)
-                }
-                
+                } else { Color.gray.frame(height: imageSize) }
                 VStack(alignment: .leading, spacing: 15) {
-                    
                     Text(breed.name)
-                        .font(.headline)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                     Text(breed.temperament)
                         .font(.footnote)
                     Text(breed.breedExplaination)
                     if breed.isHairless {
                         Text("hairless")
                     }
-                    
                     HStack {
                         Text("Energy level")
                         Spacer()
@@ -51,7 +42,6 @@ struct BreedDetailView: View {
                                 .foregroundColor(breed.energyLevel > id ? Color.accentColor : Color.gray )
                         }
                     }
-                    
                     Spacer()
                 }.padding()
                     .navigationBarTitleDisplayMode(.inline)
