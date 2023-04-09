@@ -1,10 +1,3 @@
-//
-//  Meow_MatcherUITestsLaunchTests.swift
-//  Meow MatcherUITests
-//
-//  Created by Roman Liukevich on 3/12/23.
-//
-
 import XCTest
 
 class Meow_MatcherUITestsLaunchTests: XCTestCase {
