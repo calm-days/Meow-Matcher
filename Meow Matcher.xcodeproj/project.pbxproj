@@ -139,8 +139,6 @@
 				8E95F94F29C1E68500C4E23B /* Utils */,
 				8E95F96229C1E68500C4E23B /* Models */,
 				8E95F95329C1E68500C4E23B /* Graphics */,
-				8E95F94D29C1E68500C4E23B /* ViewModels */,
-				8E95F94929C1E68400C4E23B /* Views */,
 				8E2DFC6C29BE23BF0034B834 /* Meow MatcherTests */,
 				8E2DFC7629BE23BF0034B834 /* Meow MatcherUITests */,
 				8E2DFC5A29BE23B90034B834 /* Products */,
@@ -205,20 +203,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		8E95F94929C1E68400C4E23B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8E95F94D29C1E68500C4E23B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		8E95F94F29C1E68500C4E23B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				8E95F95729C1E68500C4E23B /* Buttons */,
-				8E95F95929C1E68500C4E23B /* Cards */,
 				8E95F95B29C1E68500C4E23B /* Other */,
 				8E95F95D29C1E68500C4E23B /* Rows */,
 			);
@@ -256,13 +239,6 @@
 				8E95F95829C1E68500C4E23B /* PrimaryButton.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		8E95F95929C1E68500C4E23B /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cards;
 			sourceTree = "<group>";
 		};
 		8E95F95B29C1E68500C4E23B /* Other */ = {

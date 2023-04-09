@@ -1,5 +1,3 @@
-
-
 import Foundation
 
 struct BreedImage: Codable {
@@ -7,5 +5,4 @@ struct BreedImage: Codable {
     let id: String?
     let url: String?
     let width: Int?
-    
 }

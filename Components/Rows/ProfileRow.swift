@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 struct ProfileRow: View {
@@ -13,19 +11,11 @@ struct ProfileRow: View {
                 Text("Roman Liukevich")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    //.lineLimit(1)
                     .foregroundColor(.white)
-                
-                
             }
-            
             Spacer()
-            
-            //glowIcon
         }
         .blurBackground()
-        
-        
     }
     
     
@@ -72,9 +62,7 @@ struct ProfileRow: View {
                 .mask(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Color.white.opacity(0.7), lineWidth: 1).blendMode(.overlay))
         }
-    }
-    
-    
+    }   
 }
 
 struct ProfileRow_Previews: PreviewProvider {

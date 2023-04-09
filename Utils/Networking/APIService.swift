@@ -1,4 +1,3 @@
-
 import Foundation
 import SwiftUI
 
@@ -11,7 +10,6 @@ struct APIService: APIServiceProtocol {
             completion(Result.failure(error))
             return
         }
-        
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error as? URLError {

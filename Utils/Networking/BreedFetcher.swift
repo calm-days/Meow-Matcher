@@ -1,8 +1,6 @@
-
-
 import Foundation
 
-class BreedFetcher: ObservableObject {
+final class BreedFetcher: ObservableObject {
 
     @Published var breeds = [Breed]()
     @Published var errorMessage: String? = nil
@@ -20,7 +18,7 @@ class BreedFetcher: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        let url = URL(string: "https://api.thecatapi.com/v1/breeds?limit=40&api_key=live_Yrty47veVOby0dmQazKqi0D6O1Ifd3PcwN6q9DVgHi8ukHtw4RgTR9SozpovY9kR")
+        let url = URL(string: "https://api.thecatapi.com/v1/breeds?limit=9&api_key=live_Yrty47veVOby0dmQazKqi0D6O1Ifd3PcwN6q9DVgHi8ukHtw4RgTR9SozpovY9kR")
         service.fetchBreeds(url: url) { [unowned self] result in
            
             DispatchQueue.main.async {
