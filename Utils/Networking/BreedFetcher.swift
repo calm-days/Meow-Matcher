@@ -14,28 +14,28 @@ final class BreedFetcher: ObservableObject {
     }
     
     func fetchAllBreeds() {
-        
-        isLoading = true
-        errorMessage = nil
-        
-        let url = URL(string: "https://api.thecatapi.com/v1/breeds?limit=9&api_key=live_Yrty47veVOby0dmQazKqi0D6O1Ifd3PcwN6q9DVgHi8ukHtw4RgTR9SozpovY9kR")
-        service.fetchBreeds(url: url) { [unowned self] result in
            
-            DispatchQueue.main.async {
-                 
-                self.isLoading = false
-                
-                switch result {
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                    print(error)
-                case .success(let breeds):
-                    self.breeds = breeds
+           isLoading = true
+           errorMessage = nil
+           
+           let url = URL(string: "https://api.thecatapi.com/v1/breeds?limit=39&api_key=live_Yrty47veVOby0dmQazKqi0D6O1Ifd3PcwN6q9DVgHi8ukHtw4RgTR9SozpovY9kR")
+           service.fetchBreeds(url: url) { [weak self] result in
+              
+               DispatchQueue.main.async {
                     
-                }
-            } 
-        }
-    }
+                   self?.isLoading = false
+                   
+                   switch result {
+                   case .failure(let error):
+                       self?.errorMessage = error.localizedDescription
+                       print(error)
+                   case .success(let breeds):
+                       self?.breeds = breeds
+                       
+                   }
+               }
+           }
+       }
     
     // MARK: preview helpers
     
